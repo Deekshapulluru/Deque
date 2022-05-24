@@ -1,3 +1,4 @@
+import java.util.*;
 public class Deque<Item> implements Iterable<Item> {
     public Node first,last;
     private int count;
