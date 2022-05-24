@@ -18,21 +18,22 @@ public class DequeArray < Item > implements Iterable < Item > {
             return size == 0;
         }
 
+
         public int size() {
             return size;
         }
 
         // resize the underlying array
-        private void resize(int capacity) {
-            assert capacity >= size;
-            Item[] copy = (Item[]) new Object[capacity];
-            for (int i = 0; i < size; i++) {
-                copy[i] = arr[(first + i) % arr.length];
-            }
-            arr = copy;
-            first = 0;
-            rear = size;
-        }
+        // private void resize(int capacity) {
+        //     assert capacity >= size;
+        //     Item[] copy = (Item[]) new Object[capacity];
+        //     for (int i = 0; i < size; i++) {
+        //         copy[i] = arr[(first + i) % arr.length];
+        //     }
+        //     arr = copy;
+        //     first = 0;
+        //     rear = size;
+        // }
 
         public void addFirst(Item item) {
             if (size == arr.length) resize(2 * arr.length); // double size of array if necessary
