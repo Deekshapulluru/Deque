@@ -46,12 +46,12 @@ public class DequeArray < Item > implements Iterable < Item > {
              size++;
          }
 
-        // public void addLast(Item item) {
-        //     if (size == arr.length) resize(2 * arr.length); // double size of array if necessary
-        //     arr[rear++] = item; // add item
-        //     if (rear == arr.length) rear = 0; // wrap-around
-        //     size++;
-        // }
+        public void addLast(Item item) {
+             if (size == arr.length) resize(2 * arr.length); // double size of array if necessary
+             arr[rear++] = item; // add item
+             if (rear == arr.length) rear = 0; // wrap-around
+             size++;
+        }
 
         public Item removeFirst() {
             if (isEmpty()) throw new NoSuchElementException("Queue underflow");
@@ -66,17 +66,17 @@ public class DequeArray < Item > implements Iterable < Item > {
             return temp; 
         }
 
-        public Item removeLast() {
-            if (isEmpty()) throw new NoSuchElementException("Queue underflow");
-            Item item = arr[rear];
-            while (item == null){
-                item = arr[rear--];
-            }
-            size--;
-            // shrink size of array if necessary
-            if (size > 0 && size == arr.length / 4) resize(arr.length / 2);
-            return item;
-        }
+        // public Item removeLast() {
+        //     if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+        //     Item item = arr[rear];
+        //     while (item == null){
+        //         item = arr[rear--];
+        //     }
+        //     size--;
+        //     // shrink size of array if necessary
+        //     if (size > 0 && size == arr.length / 4) resize(arr.length / 2);
+        //     return item;
+        // }
 
         public Iterator < Item > iterator() {
             return new ArrayIterator();
