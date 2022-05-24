@@ -70,7 +70,13 @@ public class Deque<Item> implements Iterable<Item> {
 
     // remove and return the item from the front
     public Item removeFirst()
-    
+    {
+        if (count == 0) throw new NoSuchElementException(); 
+        Item temp = first.data;
+        first = first.next; 
+        count--;
+        return temp;
+    }
 
     // remove and return the item from the back
     public Item removeLast()
