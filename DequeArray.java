@@ -35,23 +35,23 @@ public class DequeArray < Item > implements Iterable < Item > {
              rear = size;
          }
 
-        // public void addFirst(Item item) {
+        public void addFirst(Item item) {
+             if (size == arr.length) resize(2 * arr.length); // double size of array if necessary
+             //Memory usage si higher and Time Complexity is in o(N)
+             for (int i = size; i > 0; i--) {
+                 arr[i] = arr[i - 1];
+             }
+             arr[0] = item;
+             rear++;
+             size++;
+         }
+
+        // public void addLast(Item item) {
         //     if (size == arr.length) resize(2 * arr.length); // double size of array if necessary
-        //     //Memory usage si higher and Time Complexity is in o(N)
-        //     for (int i = size; i > 0; i--) {
-        //         arr[i] = arr[i - 1];
-        //     }
-        //     arr[0] = item;
-        //     rear++;
+        //     arr[rear++] = item; // add item
+        //     if (rear == arr.length) rear = 0; // wrap-around
         //     size++;
         // }
-
-        public void addLast(Item item) {
-            if (size == arr.length) resize(2 * arr.length); // double size of array if necessary
-            arr[rear++] = item; // add item
-            if (rear == arr.length) rear = 0; // wrap-around
-            size++;
-        }
 
         public Item removeFirst() {
             if (isEmpty()) throw new NoSuchElementException("Queue underflow");
