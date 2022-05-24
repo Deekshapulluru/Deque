@@ -80,6 +80,13 @@ public class Deque<Item> implements Iterable<Item> {
 
     // remove and return the item from the back
     public Item removeLast()
+    {
+        if (count == 0) throw new NoSuchElementException(); 
+        Item temp = last.data;
+        last = last.next;
+        count--;
+        return temp; 
+    }
 
     // return an iterator over items in order from front to back
     public Iterator<Item> iterator()
