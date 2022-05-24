@@ -99,12 +99,12 @@ public class DequeArray < Item > implements Iterable < Item > {
         public static void main(String[] args) {
             Scanner scan = new Scanner(System.in);
             DequeArray dq = new DequeArray();
-            dq.addFirst(11);
-            dq.addLast(12);
-            dq.addFirst(13);
-            dq.addLast(14);
-            dq.addFirst(15);
-            dq.addLast(16);
+            dq.addFirst(55);
+            dq.addLast(56);
+            dq.addFirst(57);
+            dq.addLast(58);
+            dq.addFirst(59);
+            dq.addLast(60);
             System.out.println(Arrays.toString(dq.arr));
             System.out.println(dq.size());
             System.out.println(dq.removeFirst());
