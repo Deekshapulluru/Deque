@@ -90,6 +90,26 @@ public class Deque<Item> implements Iterable<Item> {
 
     // return an iterator over items in order from front to back
     public Iterator<Item> iterator()
+    {
+        return new isIterator();
+    }
+    public class isIterator implements Iterator<Item>{
+        Node temp = first;
+
+        public boolean hasNext(){
+            return temp != null;
+        }
+
+        public Item next(){
+            if(!hasNext())throw new NoSuchElementException();
+            Item temp1 = temp.data;
+            temp = temp.next;
+            return temp1; 
+        }
+        public void remove(){
+            throw new UnsupportedOperationException();
+        }
+    }
 
     // unit testing (required)
     public static void main(String[] args)
