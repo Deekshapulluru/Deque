@@ -82,21 +82,21 @@ public class DequeArray < Item > implements Iterable < Item > {
             return new ArrayIterator();
         }
 
-        // private class ArrayIterator implements Iterator < Item > {
-        //     private int i = 0;
-        //     public boolean hasNext() {
-        //         return i < size;
-        //     }
-        //     public void remove() {
-        //         throw new UnsupportedOperationException();
-        //     }
-        //     public Item next() {
-        //         if (!hasNext()) throw new NoSuchElementException();
-        //         Item item = arr[(i + first) % arr.length];
-        //         i++;
-        //         return item;
-        //     }
-        // }
+        private class ArrayIterator implements Iterator < Item > {
+             private int i = 0;
+             public boolean hasNext() {
+                 return i < size;
+             }
+             public void remove() {
+                 throw new UnsupportedOperationException();
+             }
+             public Item next() {
+                 if (!hasNext()) throw new NoSuchElementException();
+                 Item item = arr[(i + first) % arr.length];
+                 i++;
+                 return item;
+             }
+         }
         public static void main(String[] args) {
             Scanner scan = new Scanner(System.in);
             DequeArray dq = new DequeArray();
