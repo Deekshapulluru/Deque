@@ -23,6 +23,9 @@ public class Deque<Item> implements Iterable<Item> {
 
     // return the number of items on the deque
     public int size()
+    {
+        return count;
+    }
 
     // add the item to the front
     public void addFirst(Item item)
